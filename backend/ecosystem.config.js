@@ -29,7 +29,7 @@ module.exports = {
       // 'pre-deploy-local': `scp.exe backend/.env.deploy ees-hwork@158.160.25.121:/home/ees-hwork/`,
       // 'post-deploy': `cd backend && npm i && npm run build && pm2 startOrRestart /home/ees-hwork/web-plus-pm2-deploy/backend/ecosystem.config.js`,
       'pre-deploy-local': `bash scripts/deployEnv.sh ${USER}@${HOST} ${MYPATH}`,
-      'post-deploy': `cd backend && npm i && npm run build && pm2 startOrRestart ${MYPATH}/current/backend/ecosystem.config.js`,
+      'post-deploy': `cd backend && npm i && npm run build && pm2 startOrRestart ${MYPATH}/current/backend/ecosystem.config.js && pm2 save`,
     }
   }
 }
